@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<Pane fx:id="canvas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Circle fx:id="ball" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <HBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="canvas" maxHeight="600.0" maxWidth="600.0" minHeight="100.0" minWidth="100.0" prefHeight="400.0" prefWidth="400.0" scaleShape="false" style="-fx-border-color: red;" HBox.hgrow="ALWAYS" />
+            <VBox alignment="TOP_CENTER" maxHeight="200.0" maxWidth="200.0" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Button fx:id="startStopButton" mnemonicParsing="false" text="Start" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="40.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label text="Balls count" textAlignment="CENTER" />
+                  <Slider fx:id="ballCount" blockIncrement="5.0" majorTickUnit="1.0" max="20.0" minorTickCount="1" showTickMarks="true" snapToTicks="true" value="1.0" />
+                  <Label fx:id="countLabel" text="1" textAlignment="CENTER" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
    </children>
-</Pane>
+</AnchorPane>

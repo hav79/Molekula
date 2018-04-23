@@ -2,10 +2,9 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Bounds;
+//import javafx.geometry.Bounds;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Shape;
 
 public class BallHandler implements EventHandler<ActionEvent> {
 
@@ -25,17 +24,12 @@ public class BallHandler implements EventHandler<ActionEvent> {
         ball.setLayoutX(ball.getLayoutX() + dx);
         ball.setLayoutY(ball.getLayoutY() + dy);
 
-        Bounds bounds = pane.getBoundsInLocal();
-
-        if (ball.getLayoutX() <= (bounds.getMinX() + ball.getRadius())
-                || ball.getLayoutX() >= (bounds.getMaxX() - ball.getRadius())) {
+        if (ball.getLayoutX() <= ball.getRadius()
+                || ball.getLayoutX() >= (pane.getWidth() - ball.getRadius()))
             dx = -dx;
-        }
 
-        if (ball.getLayoutY() <= (bounds.getMinY() + ball.getRadius())
-                || ball.getLayoutY() >= (bounds.getMaxY() - ball.getRadius())) {
+        if (ball.getLayoutY() <= ball.getRadius()
+                || ball.getLayoutY() >= (pane.getHeight() - ball.getRadius()))
             dy = -dy;
-        }
-
     }
 }

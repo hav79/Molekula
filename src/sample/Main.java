@@ -13,12 +13,12 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("sample.fxml"));
         Parent root = loader.load();
-        Controller controller = loader.getController();
+//        Controller controller = loader.getController();
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 600, 400));
 
         primaryStage.show();
-        controller.run();
+//        controller.run();
     }
 
 
