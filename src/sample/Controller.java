@@ -69,7 +69,7 @@ public class Controller {
         balls.clear();
         canvas.getChildren().clear();
         for (int i = 0; i < count; i++) {
-            Ball newBall = new Ball(10, Color.AQUAMARINE);
+            Ball newBall = new Ball();
             newBall.relocate(Math.random() * canvas.getWidth() * 0.9,
                     Math.random() * canvas.getHeight() * 0.9);
             canvas.getChildren().add(newBall);
