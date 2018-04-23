@@ -1,4 +1,4 @@
-package sample;
+package balls;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -14,6 +14,7 @@ public class Ball extends Circle {
 
     private double dx;
     private double dy;
+    private boolean wasCollision = false;
 
     public Ball() {
         super(10);
@@ -32,11 +33,25 @@ public class Ball extends Circle {
         return dy;
     }
 
+    public boolean wasCollision() {
+        return wasCollision;
+    }
+
+    public void setWasCollision(boolean wasCollision) {
+        this.wasCollision = wasCollision;
+    }
+
+    public void collisionTo(Ball ball) {
+        dx += 0.1 * ball.getDx();
+        dy += 0.1 * ball.getDy();
+        wasCollision = true;
+    }
+
     public void reverseX() {
-        dx = -dx;
+        dx = -0.99 * dx;
     }
 
     public void reverseY() {
-        dy = -dy;
+        dy = -0.99 * dy;
     }
 }
